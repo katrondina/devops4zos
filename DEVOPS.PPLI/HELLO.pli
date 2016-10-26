@@ -8,4 +8,5 @@
      PUT SKIP LIST('VARIABLE:',HELLO);
      /* hello comment 10-14 */
      /* comment 10/27       */
+     /* comment 1234 */
  END HELLO;
