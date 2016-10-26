@@ -1,0 +1,10 @@
+ HELLO: PROC OPTIONS(MAIN);
+     DCL HELLO CHAR(11) INIT('HELLO WORLD');
+
+     PUT LIST('HELLO WORLD');        /* PUT LIST FOR SINGLE LINE    */
+     PUT SKIP LIST ('HELLO WORLD');  /* PUT SKIP LIST TO PUT CURSOR */
+                                     /* ON NEXT LEVEL               */
+     /* PUT SYSPRINT DD SYSOUT=* ON YOUR JCL TO PRINT THIS IN SPOOL */
+     PUT SKIP LIST('VARIABLE:',HELLO);
+     /* hello comment 10-14 */
+ END HELLO;
