@@ -6,7 +6,7 @@ echo %katrondinapassword%>> ftpcmd.tmp
 
 rem -- put "input file" 'PDS/DS destination'
 echo put "%WORKSPACE%\DEVOPS.PPLI\HELLO.pli" 'b136901.devops.ppli(hello)'>> ftpcmd.tmp
-echo put "%WORKSPACE%\DEVOPS.JCL\PLAHELLO.jcl" 'b136901.devops.jcl(plahello)'>> ftpcmd.tmp
+echo put "%WORKSPACE%\DEVOPS.JCL\PLAHELLO))).jcl" 'b136901.devops.jcl(plahello)'>> ftpcmd.tmp
 
 rem -- to connect to MVS JES Subcommand
 echo quote site filetype=jes>> ftpcmd.tmp
