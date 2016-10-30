@@ -21,4 +21,4 @@ rem --
 echo quit>> ftpcmd.tmp
 ftp -n -s:ftpcmd.tmp %ProjectMVShostname%
 rem del ftpcmd.tmp
-type result1.txt
+rem type result1.txt
