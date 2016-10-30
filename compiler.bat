@@ -1,8 +1,8 @@
 @echo off
 
 rem -- enter your username and your password
-echo user %katrondinausername%> ftpcmd.tmp
-echo %katrondinapassword%>> ftpcmd.tmp
+echo user %USERNAME%> ftpcmd.tmp
+echo %PASSWORD%>> ftpcmd.tmp
 
 rem -- put "input file" 'PDS/DS destination'
 echo put "%WORKSPACE%\DEVOPS.PPLI\HELLO.pli" 'b136901.devops.ppli(hello)'>> ftpcmd.tmp
@@ -19,6 +19,6 @@ echo quote site filetype=seq>> ftpcmd.tmp
 
 rem --
 echo quit>> ftpcmd.tmp
-ftp -n -s:ftpcmd.tmp %ProjectMVShostname%
+ftp -n -s:ftpcmd.tmp %HOSTNAME%
 del ftpcmd.tmp
 type result1.txt
