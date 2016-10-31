@@ -22,4 +22,3 @@ echo quit>> ftpcmd.tmp
 ftp -n -s:ftpcmd.tmp %ProjectMVShostname%
 del ftpcmd.tmp
 rem type result1.txt
-echo "test postcommit12345"
