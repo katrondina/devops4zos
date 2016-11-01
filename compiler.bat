@@ -20,5 +20,5 @@ echo quote site filetype=seq>> ftpcmd.tmp
 rem --
 echo quit>> ftpcmd.tmp
 ftp -n -s:ftpcmd.tmp %ProjectMVShostname%
-rem del ftpcmd.tmp
+del ftpcmd.tmp
 rem type result1.txt
