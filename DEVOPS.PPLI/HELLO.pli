@@ -12,4 +12,5 @@
      /* testing of post-commit hooks */
      /* testing mvs demo before state */
      /* testing mvs demo continuous integration */
+     /* testing mvs demo continuous integration 2 */
  END HELLO;
