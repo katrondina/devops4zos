@@ -1,24 +1,25 @@
 @echo off
 
-rem -- enter your username and your password
+REM ----------- ENTER YOUR USERNAME AND PASSWORD --
 echo user %katrondinausername%> ftpcmd.tmp
 echo %katrondinapassword%>> ftpcmd.tmp
 
-rem -- put "input file" 'PDS/DS destination'
+REM ----------- PUT "INPUT FILE" 'PDS/DS DESTINATION'
 echo put "%WORKSPACE%\DEVOPS.PPLI\HELLO.pli" 'b136901.devops.ppli(hello)'>> ftpcmd.tmp
-echo rem put "%WORKSPACE%\DEVOPS.JCL\PLBHELLO.jcl" 'b136901.devops.jcl(plbhello)'>> ftpcmd.tmp
+echo put "%WORKSPACE%\DEVOPS.JCL\PLBHELLO.jcl" 'b136901.devops.jcl(plbhello)'>> ftpcmd.tmp
 
-rem -- to connect to MVS JES Subcommand
+REM ----------- TO CONNECT TO MVS JES SUBCOMMAND
 echo quote site filetype=jes>> ftpcmd.tmp
-rem -- ftp compile jcl to jes
-echo rem get 'b136901.devops.jcl(plahello)' result1.txt>>ftpcmd.tmp
-rem -- to view jobs in spool
+REM ----------- FTP COMPILE JCL TO JES AND SAVE SPOOL TO RESULT1.TXT
+echo get 'b136901.devops.jcl(plahello)' result1.txt>>ftpcmd.tmp
+REM ----------- TO VIEW HELD JOBS IN SPOOL
 echo dir>> ftpcmd.tmp
-rem -- to go back to working directory
+REM ----------- BACK TO WORKING DIRECTORY
 echo quote site filetype=seq>> ftpcmd.tmp
 
-rem --
+REM ---- DISCONNECT AND QUIT FTP
+echo disconnect>> ftpcmd.tmp
 echo quit>> ftpcmd.tmp
 ftp -n -s:ftpcmd.tmp %ProjectMVShostname%
-rem del ftpcmd.tmp
-rem type result1.txt
+del ftpcmd.tmp
+type result1.txt
