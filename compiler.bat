@@ -22,5 +22,5 @@ echo disconnect>> ftpcmd.tmp
 echo quit>> ftpcmd.tmp
 ftp -n -s:ftpcmd.tmp %ProjectMVShostname%
 del ftpcmd.tmp
-type result1.txt
+rem type result1.txt
 rem --testing again-- .txt deleted from previous.
