@@ -6,12 +6,16 @@
                                      /* ON NEXT LEVEL               */
      /* PUT SYSPRINT DD SYSOUT=* ON YOUR JCL TO PRINT THIS IN SPOOL */
      PUT SKIP LIST('VARIABLE:',HELLO);
+
+     /* ------------------------------------------------------------*/
+     /*     comments below are for testing                          */
+     /*-------------------------------------------------------------*/
      /* hello comment 10-14 */
      /* hello comment 10/27 */
      /* hello comment 10/31 hello123 */
-     /* testing of post-commit hooks */
+     /* testing of post-commit hooks - successful */
      /* testing mvs demo before state */
      /* testing mvs demo continuous integration */
      /* testing mvs demo continuous integration 2 */
-     /* testing of email notification */
+     /* testing of email notification - successful */
  END HELLO;
