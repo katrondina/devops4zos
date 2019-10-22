@@ -7,4 +7,5 @@
      /* PUT SYSPRINT DD SYSOUT=* ON YOUR JCL TO PRINT THIS IN SPOOL */
      PUT SKIP LIST('VARIABLE:',HELLO);
      /* hello comment 10-14 */
+     /* hello this is a test for vscode */
  END HELLO;
