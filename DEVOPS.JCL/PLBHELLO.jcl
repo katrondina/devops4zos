@@ -1,7 +1,7 @@
 //B1369011  JOB  ($44ZTCAT,012,WPB,EZTA,,N),BOUSDEVL,TIME=5,
 //             COND=(04,LT),MSGLEVEL=(1,1),MSGCLASS=H,
 //             REGION=5M,NOTIFY=&SYSUID,SCHENV=ANYSYS
-//HELDDS    OUTPUT  OUTDISP=(HOLD,HOLD)
+//*HELDDS    OUTPUT  OUTDISP=(HOLD,HOLD)
 //*JOBPARM  SYSAFF=ANY
 //*===========================================================
 //* GENERATE COMPILER
@@ -10,17 +10,27 @@
 //*               USING PROC=ELAXFPL1 GENERATES JCL ERROR
 //*               FOR MISSING PROC
 //*=========================================================*//
-//STEP01  EXEC IEL1CL //* CHANGE FROM ELAXFPL1 *//
+//STEP01  EXEC IEL1CL
+//* CHANGE FROM ELAXFPL1 *//
 //* CICS=,
 //* DB2=,
 //* COMP=
-//PLI.SYSLIN DD DISP=(NEW,PASS),   //*input object module*//
+//*
+//* ----- input object module ------------------------------*
+//*
+//PLI.SYSLIN DD DISP=(NEW,PASS),
 //        DSN=&&LOADSET,UNIT=SYSDA,SPACE=(TRK,(10,2)),
 //        DCB=BLKSIZE=3120
-//PLI.SYSLIB DD DSN=BOEMDS.DEVL.MACROS,DISP=SHR //*the macro library*//
+//*
+//* ----- the macro library   ------------------------------*
+//*
+//PLI.SYSLIB DD DSN=BOEMDS.DEVL.MACROS,DISP=SHR
 //           DD DSN=SPBIDDZ.DEVL.MACROS,DISP=SHR
 //PLI.SYSXMLSD DD DUMMY
-//PLI.SYSIN DD DISP=SHR,  //*source code*//
+//*
+//* ----- source code library ------------------------------*
+//*
+//PLI.SYSIN DD DISP=SHR,
 //        DSN=B136901.DEVOPS.PPLI(HELLO123)
 //*
 //******* ADDITIONAL JCL FOR COMPILE HERE ******
